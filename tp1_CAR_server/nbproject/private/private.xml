@@ -3,9 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/sofian/Bureau/M1_MIAGE/MIAGE-COO-PROJECT/tp1_CAR_server/src/tp1_car_server/Server.java</file>
-            <file>file:/home/sofian/Bureau/M1_MIAGE/MIAGE-COO-PROJECT/tp1_CAR_server/src/tp1_car_server/Operation.java</file>
-            <file>file:/home/sofian/Bureau/M1_MIAGE/MIAGE-COO-PROJECT/tp1_CAR_server/src/tp1_car_server/Tp1_CAR_server.java</file>
+            <file>file:/home/sofian/Bureau/M1_MIAGE/CAR/tp1_CAR_server/src/tp1_car_server/Server.java</file>
+            <file>file:/home/sofian/Bureau/M1_MIAGE/CAR/tp1_CAR_server/test/tp1_car_server/OperationTest.java</file>
+            <file>file:/home/sofian/Bureau/M1_MIAGE/CAR/tp1_CAR_server/test/tp1_car_server/ServerTest.java</file>
+            <file>file:/home/sofian/Bureau/M1_MIAGE/CAR/tp1_CAR_server/src/tp1_car_server/Operation.java</file>
+            <file>file:/home/sofian/Bureau/M1_MIAGE/CAR/tp1_CAR_server/src/tp1_car_server/Tp1_CAR_server.java</file>
         </group>
     </open-files>
 </project-private>
