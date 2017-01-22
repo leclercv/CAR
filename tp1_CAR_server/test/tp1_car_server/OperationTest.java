@@ -18,24 +18,8 @@ import static org.junit.Assert.*;
  * @author sofian
  */
 public class OperationTest {
-    
+
     public OperationTest() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
     }
 
     /**
@@ -44,10 +28,14 @@ public class OperationTest {
     @Test
     public void testCalculate() {
         System.out.println("calculate");
-        Operation instance = null;
+        ArrayList<Integer> op = new ArrayList();
+        ArrayList<String> operand = new ArrayList();
+        op.add(1);
+        op.add(3);
+        operand.add("+");
+        Operation instance = new Operation(op, operand);
         instance.calculate();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(instance.getResult(), "4");
     }
 
     /**
@@ -56,106 +44,17 @@ public class OperationTest {
     @Test
     public void testRecalculate() {
         System.out.println("recalculate");
-        Operation lastOpe = null;
-        Operation instance = null;
+        ArrayList<Integer> op = new ArrayList();
+        ArrayList<String> operand = new ArrayList();
+        op.add(1);
+        op.add(3);
+        operand.add("+");
+        Operation lastOpe = new Operation(op, operand);
+        lastOpe.calculate();
+        ArrayList<Integer> op2 = new ArrayList();
+        op2.add(3);
+        Operation instance = new Operation(op2, operand);
         instance.recalculate(lastOpe);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(instance.getResult(), "7");
     }
-
-    /**
-     * Test of toString method, of class Operation.
-     */
-    @Test
-    public void testToString() {
-        System.out.println("toString");
-        Operation instance = null;
-        String expResult = "";
-        String result = instance.toString();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getOp method, of class Operation.
-     */
-    @Test
-    public void testGetOp() {
-        System.out.println("getOp");
-        Operation instance = null;
-        ArrayList<Integer> expResult = null;
-        ArrayList<Integer> result = instance.getOp();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of setOp method, of class Operation.
-     */
-    @Test
-    public void testSetOp() {
-        System.out.println("setOp");
-        ArrayList<Integer> op = null;
-        Operation instance = null;
-        instance.setOp(op);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getOperand method, of class Operation.
-     */
-    @Test
-    public void testGetOperand() {
-        System.out.println("getOperand");
-        Operation instance = null;
-        ArrayList<String> expResult = null;
-        ArrayList<String> result = instance.getOperand();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of setOperand method, of class Operation.
-     */
-    @Test
-    public void testSetOperand() {
-        System.out.println("setOperand");
-        ArrayList<String> operand = null;
-        Operation instance = null;
-        instance.setOperand(operand);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getResult method, of class Operation.
-     */
-    @Test
-    public void testGetResult() {
-        System.out.println("getResult");
-        Operation instance = null;
-        String expResult = "";
-        String result = instance.getResult();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of setResult method, of class Operation.
-     */
-    @Test
-    public void testSetResult() {
-        System.out.println("setResult");
-        String result_2 = "";
-        Operation instance = null;
-        instance.setResult(result_2);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-    
 }

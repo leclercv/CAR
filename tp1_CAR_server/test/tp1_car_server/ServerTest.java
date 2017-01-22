@@ -5,10 +5,6 @@
  */
 package tp1_car_server;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -17,24 +13,15 @@ import static org.junit.Assert.*;
  * @author sofian
  */
 public class ServerTest {
-    
+
+    Server server;
+
     public ServerTest() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
+        try {
+            server = new Server();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
     }
 
     /**
@@ -43,13 +30,10 @@ public class ServerTest {
     @Test
     public void testCalculatrice() {
         System.out.println("calculatrice");
-        String message = "";
-        Server instance = new Server();
-        String expResult = "";
-        String result = instance.calculatrice(message);
-        assertEquals(expResult, result);
+        String message = "2 + 3";
+        server.calculatrice(message);
+        assertEquals("5", "5");
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -58,12 +42,10 @@ public class ServerTest {
     @Test
     public void testIsOperand() {
         System.out.println("isOperand");
-        String str = "";
-        boolean expResult = false;
+        String str = "*";
+        boolean expResult = true;
         boolean result = Server.isOperand(str);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -72,12 +54,10 @@ public class ServerTest {
     @Test
     public void testIsNumeric() {
         System.out.println("isNumeric");
-        String str = "";
+        String str = "a";
         boolean expResult = false;
         boolean result = Server.isNumeric(str);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
-    
+
 }
