@@ -21,8 +21,7 @@ public class Main {
             System.out.println("You need to put the number of threads used");
             return;
         }
-
-        Server server = new Server(Integer.parseInt("4"));
+        Server server = new Server(Integer.parseInt(args[1]));
         server.start();
     }
 }
