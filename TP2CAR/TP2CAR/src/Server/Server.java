@@ -48,7 +48,7 @@ public class Server {
         }
         return messageThread;
     }
-    
+
     public void mergeMap() {
         HashMap<String, Integer> finalMap = new HashMap();
         for (MyThread th : this.threads) {
@@ -65,14 +65,27 @@ public class Server {
         }
     }
 
+    public void rewind() {
+        nb = 0;
+        pos = 0;
+        word = "";
+        tokens = null;
+        
+       for (MyThread th : this.threads)
+       {
+           th.setMapWord(new HashMap());
+           th.setCounter(null);
+       }
+    }
+
     public void start() {
         ServerSocket ps = null;
         this.service();
         try {
-            ps = new ServerSocket(4010);
-            Socket as = ps.accept();
             System.out.println("Connection established");
+            ps = new ServerSocket(4010);
             while (true) {
+                Socket as = ps.accept();
                 BufferedReader in = new BufferedReader(
                         new InputStreamReader(as.getInputStream()));
                 DataOutputStream out = new DataOutputStream(as.getOutputStream());
@@ -91,9 +104,12 @@ public class Server {
                     mergeMap();
                     out.writeBytes("Word most found : " + word + " with " + nb + " occurences\n");
                     System.out.println("Response has been sent.");
+                    as.close();
+                    rewind();
                 }
             }
         } catch (Exception ex) {
+            System.out.println(ex);
             System.exit(-1);
         }
     }

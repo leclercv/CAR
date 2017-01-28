@@ -22,16 +22,17 @@ public class Client {
             System.out.println("Client: Connection established");
             DataOutputStream out = new DataOutputStream(as.getOutputStream());
             BufferedReader in = new BufferedReader(new InputStreamReader(as.getInputStream()));
-            InputStream flux = new FileInputStream("/home/sofian/Bureau/M1_MIAGE/CAR/TP2CAR/TP2CAR/text2.txt");
+            InputStream flux = new FileInputStream("/home/sofian/Bureau/M1_MIAGE/CAR/TP2CAR/TP2CAR/random2.txt");
             InputStreamReader lecture = new InputStreamReader(flux);
             BufferedReader buff = new BufferedReader(lecture);
-            String ligne = "";
+            String ligne= ""; 
+            String text = "";
             while ((ligne = buff.readLine()) != null) {
-                ligne += "\n";
-                out.writeBytes(ligne);
-                String response = in.readLine();
-                System.out.println(response);
+                text += ligne;
             }
+            out.writeBytes(text + "\n");
+            String response = in.readLine();
+            System.out.println(response);
             buff.close();
             as.close();
         } catch (Exception e) {

@@ -17,13 +17,12 @@ public class Main {
 
     public static void main(String[] args) {
 
-       /* if (args.length == 0) {
+        if (args.length == 0) {
             System.out.println("You need to put the number of threads used");
             return;
-        }*/
-        
-//        Server server = new Server(Integer.parseInt(args[1]));
-          Server server = new Server(Integer.parseInt("2"));
+        }
+
+        Server server = new Server(Integer.parseInt("4"));
         server.start();
     }
 }

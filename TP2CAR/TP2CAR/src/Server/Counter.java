@@ -10,10 +10,6 @@ public class Counter {
     public Counter(String message) {
         this.message = message;
         this.tokens = message.split(" ");
-/*        for (int i = 0; i < tokens.length; i++)
-        {
-            System.out.println("tokens is : " + tokens[i]);
-        }*/
     }
 
     public void counting(HashMap<String, Integer> map) {
