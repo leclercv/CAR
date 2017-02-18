@@ -30,9 +30,9 @@ public class Server {
 
     private int nbFiles = 0;
     static final int port = 4010;
-    private String repertoirePath = "/home/sofian/Bureau/M1_MIAGE/CAR/TP2CAR/TP3_CAR_server/download_files/Files";
-    private String filePath = "/home/sofian/Bureau/M1_MIAGE/CAR/TP2CAR/TP3_CAR_server/download_files/Files/";
-    private String tagsPath = "/home/sofian/Bureau/M1_MIAGE/CAR/TP2CAR/TP3_CAR_server/download_files/";
+    private String repertoirePath = "/home/sofian/Bureau/M1_MIAGE/CAR/TP3CAR/TP3_CAR_server/download_files/Files";
+    private String filePath = "/home/sofian/Bureau/M1_MIAGE/CAR/TP3CAR/TP3_CAR_server/download_files/Files/";
+    private String tagsPath = "/home/sofian/Bureau/M1_MIAGE/CAR/TP3CAR/TP3_CAR_server/download_files/";
 
     private HashMap<String, ArrayList<String>> fileAndTags = new HashMap();
 
@@ -122,8 +122,11 @@ public class Server {
                     chaine += ligne + "\n";
                 }
                 br.close();
-                if (format.equals(format.equals("bin")))
-                chaine = Base64.getEncoder().encodeToString(chaine.getBytes("UTF-8"));
+                System.out.println("format is " + format);
+                if (format.equals("binaire")) {
+                    System.out.println("entered format base64");
+                    chaine = Base64.getEncoder().encodeToString(chaine.getBytes("UTF-8"));
+                }
                 out.writeObject("FIC " + file.getName() + "\n" + "TAGS: " + tab.toString() + "\nTYPE: " + format + "\n\n" + chaine + "\n\n");
             } catch (Exception e) {
                 System.out.println(e.toString());
