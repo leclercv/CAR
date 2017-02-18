@@ -122,8 +122,9 @@ public class Server {
                     chaine += ligne + "\n";
                 }
                 br.close();
-                String chaine2 = Base64.getEncoder().encodeToString(chaine.getBytes("UTF-8"));
-                out.writeObject("FIC " + file.getName() + "\n" + "TAGS: " + tab.toString() + "\nTYPE: " + format + "\n\n" + chaine2 + "\n\n");
+                if (format.equals(format.equals("bin")))
+                chaine = Base64.getEncoder().encodeToString(chaine.getBytes("UTF-8"));
+                out.writeObject("FIC " + file.getName() + "\n" + "TAGS: " + tab.toString() + "\nTYPE: " + format + "\n\n" + chaine + "\n\n");
             } catch (Exception e) {
                 System.out.println(e.toString());
             }
